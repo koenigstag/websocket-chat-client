@@ -1,4 +1,4 @@
-import ChatPage from "../pages/Chat";
+import ChatPage from "./pages/Chat";
 import "./App.css";
 
 function App() {
