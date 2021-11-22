@@ -1,11 +1,13 @@
 import React from "react";
 import { Field, Form, Formik } from "formik";
+import { sendMessage } from "../../api/chat";
 
 export default function Chat() {
   return (
     <Formik
       onSubmit={(values, formikBag) => {
-        console.log(values);
+        sendMessage(values.text);
+
         formikBag.resetForm();
       }}
       initialValues={{
