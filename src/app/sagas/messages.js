@@ -4,9 +4,8 @@ import {
   getMessagesError,
   getMessagesSuccess,
   sendMessageError,
-  sendMessageSuccess,
 } from '../actions/creators';
-import * as API from '../../api/chat';
+import * as API from '../../api/message';
 
 export default function* watchMessages() {
   yield takeEvery(ACTION_TYPES.CREATE_MESSAGE_REQUEST, sendMessageSaga);
