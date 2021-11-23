@@ -1,12 +1,15 @@
 import React from "react";
+import { useDispatch } from 'react-redux';
 import { Field, Form, Formik } from "formik";
-import { sendMessage } from "../../api/chat";
+import { sendMessageRequest } from "../../app/actions/creators"
 
 export default function Chat() {
+  const dispatch = useDispatch()
+
   return (
     <Formik
       onSubmit={(values, formikBag) => {
-        sendMessage(values.text);
+        dispatch(sendMessageRequest(values));
 
         formikBag.resetForm();
       }}
